@@ -347,6 +347,7 @@ void _wsOnStart(JsonObject& root) {
         _wsUpdate(root);
 
         root["btnDelay"] = getSetting("btnDelay", BUTTON_DBLCLICK_DELAY).toInt();
+        root["btnTouchSensitivity"] = getSetting("btnTouchSensitivity", BUTTON_TOUCH_SENSITIVITY).toInt();
         root["webPort"] = getSetting("webPort", WEB_PORT).toInt();
         root["wsAuth"] = getSetting("wsAuth", WS_AUTHENTICATION).toInt() == 1;
         #if TERMINAL_SUPPORT

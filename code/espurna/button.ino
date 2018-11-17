@@ -231,6 +231,19 @@ void buttonSetup() {
     // Register loop
     espurnaRegisterLoop(buttonLoop);
 
+    // Register settings change callback
+    espurnaRegisterReload(_buttonConfigure);
+    
+    // Do initial configuration
+    _buttonConfigure();
+}
+
+void _buttonConfigure() {
+    unsigned long buttonTouchSensitivity = getSetting("btnTouchSensitivity", BUTTON_TOUCH_SENSITIVITY).toInt();
+
+    for (unsigned int i=0; i < _buttons.size(); i++) {
+        _buttons[i].button->setTouchSensitivity(buttonTouchSensitivity);
+    }
 }
 
 void buttonLoop() {

@@ -243,6 +243,10 @@
 #define BUTTON_LNGPRESS_DELAY       1000        // Time in ms holding the button down to get a long click
 #endif
 
+#ifndef BUTTON_TOUCH_SENSITIVITY
+#define BUTTON_TOUCH_SENSITIVITY       6        // Touch button sensitivity in standard deviations
+#endif
+
 #define BUTTON_MQTT_SEND_ALL_EVENTS 0           // 0 - to send only events the are bound to actions
                                                 // 1 - to send all button events to MQTT
 
