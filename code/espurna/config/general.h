@@ -935,7 +935,11 @@
 #define LIGHT_WARMWHITE_MIRED   500         // Warmwhite Strip, Value must be __ABOVE__ W1!! (Default: 2000 Kelvin/500 MiRed)
 
 #ifndef LIGHT_USE_GAMMA
-#define LIGHT_USE_GAMMA         0           // Use gamma correction for color channels
+#define LIGHT_USE_GAMMA         0           // Use gamma correction (for single channel or for color channels in case of RGBxx)
+#endif
+
+#ifndef LIGHT_GAMMA
+#define LIGHT_GAMMA             2.2         // Gamma correction to be used
 #endif
 
 #ifndef LIGHT_USE_CSS
